@@ -1,26 +1,27 @@
-// src/App.js
 import React from 'react';
-import Header from './Header';
-import About from './About';
-import Contact from './Contact';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import About from './components/About';
+import Contact from './components/Contact';
+import Header from './components/Header';
 
 const App = () => {
     return (
-        <div className="App">
-            <Header 
-                name="Your Name or Fictional Character" 
-                backgroundImage="path_to_your_image.jpg" // Replace with actual image URL
-            />
-            <About 
-                title="About Me"
-                description="This is a brief description about yourself or a fictional character. I am passionate about coding, design, and bringing ideas to life through technology."
-            />
-            <Contact 
-                email="example@example.com" 
-                linkedin="https://www.linkedin.com/in/example"
-            />
-        </div>
+        <Router>
+            <div>
+                <Header />
+                <Switch>
+                    <Route path="/about" component={About} />
+                    <Route path="/contact" component={Contact} />
+                    <Route path="/" exact>
+                        <h2>Welcome to My Portfolio!</h2>
+                        <p>This is the home page.</p>
+                    </Route>
+                </Switch>
+                <footer>
+                    <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+                </footer>
+            </div>
+        </Router>
     );
 };
 

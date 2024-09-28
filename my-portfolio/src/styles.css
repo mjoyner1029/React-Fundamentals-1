@@ -4,10 +4,16 @@ body {
     padding: 0;
 }
 
-header {
-    background: #333;
+.header {
+    background-image: url('../images/photo.png'); /* Adjust path if necessary */
+    background-size: cover;
     color: #fff;
-    padding: 10px 20px;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
 }
 
 nav ul {

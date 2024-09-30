@@ -1,17 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './Header.css'; // Create a separate CSS file for Header styles
 
 const Header = () => {
     return (
-        <header>
-            <h1>Your Portfolio Title</h1>
-            <nav>
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                </ul>
-            </nav>
+        <header className="header">
+            <h1>Miles Joyner</h1> 
         </header>
     );
 };
